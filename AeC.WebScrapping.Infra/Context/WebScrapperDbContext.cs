@@ -1,12 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AeC.WebScrapping.Domain;
+using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
-namespace AeC.WebScrapping.Infra.Context
+namespace AeC.WebScrapping.Infra.Context;
+
+public class WebScrapperDbContext : DbContext
 {
-    internal class WebScrapperDbContext
+    public WebScrapperDbContext(DbContextOptions<WebScrapperDbContext> options)
+        : base(options)
+    { }
+
+    public virtual DbSet<Scrapping> Scrapping { get; set; }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+        base.OnModelCreating(modelBuilder);
     }
 }

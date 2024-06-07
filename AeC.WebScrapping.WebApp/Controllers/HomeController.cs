@@ -3,6 +3,7 @@ using AeC.WebScrapping.Domain.Interfaces;
 using AeC.WebScrapping.WebApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System;
 using System.Diagnostics;
 
 namespace AeC.WebScrapping.WebApp.Controllers
@@ -26,14 +27,20 @@ namespace AeC.WebScrapping.WebApp.Controllers
         [HttpPost]
         public ActionResult Extract(string json)
         {
-            if (ModelState.IsValid)
+            try
             {
-                _scrappingService.ScrapeAsync(json);
-
-                return View("Index", json);
+                if (ModelState.IsValid)
+                {
+                    _scrappingService.ScrapeAsync(json);
+                }
+            }
+            catch (Exception ex)
+            {
+                TempData["Erro"] = ex.Message;
+                return RedirectToAction("Index");
             }
 
-            return View(json);
+            return View("Index", json);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
