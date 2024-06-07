@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+< class="text-center">
+    <h1 class="display-4">Bem-vindo ao WebScrapping da AeC</h1>
+    <p>Para utilizar, digite o JSON com a URL e os comandos para extração de dados:</p>
+
+    <form asp-action="Extract" method="post">
+        <div>
+        <textarea id="json" name="json" rows="10" cols="100"></textarea>
+        </div>
+        <div>
+            <input type="submit" value="Submit" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
