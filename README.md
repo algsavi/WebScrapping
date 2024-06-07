@@ -104,6 +104,8 @@ O inglês foi usado como linguagem padrão pois se trata de um projeto com possi
 O resultado é armazenado no banco de dados em formato JSON, como foi criado um projeto dinâmico, foi a melhor decisão de arquitetura,
 pois assim temos flexibilidade na hora de obter os dados. Para visualizar em HTML ou relatório PDF (ou para futuras exportações) fica bem fácil e flexivel também.
 
+Tentei simular o GitFlow, mesmo sendo mais complicado por estar começando tudo do zero e ser apenas um desenvolvedor, mas criei comentário de bug usando uma branch hotfix e depois criei um comentário de feature...Simulando a feature indo pra develop e depois o merge com a master.
+
 O projeto foi criado de uma forma que possa ser separado os serviços para que assim possa ser realizado builds independentes, a arquitetura usada foi a Clean Architecture.
 
 Melhorias futuras:
