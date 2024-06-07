@@ -112,5 +112,8 @@ Melhorias futuras:
 	- Para escalar um produto assim, precisaria adicionar um serviço assincrone do WebExtractor, deixando ele rodar em plano de fundo. Poderia usar tanto o Quartz quanto um serviço de messageria como o RabbitMQ (pensando em escala, seria a melhor opção).
 	- Melhorias na usabilidade da interface web, com retornos de erro
 	- Melhorias no fluxo de funcionamento do WebExtractor, para que assim seja possível realizar logs e tratamentos mais adequados
+ 	- Gerenciamento de acessos (tanto na parte de acesso ao sistema de extração, quanto na parte de logins de acesso caso o site que deve ser lido, tenha login)
+  	- Controle de paginações de resultados
+   	- ... Essas foram as que pensei no momento...
  
 Qualquer dúvida estou a disposição.
