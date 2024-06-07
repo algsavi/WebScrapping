@@ -22,6 +22,7 @@ public class ScrappingService : IScrappingService
         {
             var scrappedData = await _webExtractor.ScrapeAsync(json);
 
+            //simulação de bug (branch hotfix)
             _extractorRepository.InsertData(scrappedData);
 
             return scrappedData;
