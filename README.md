@@ -42,7 +42,7 @@ Exemplo de JSON da Alura (foco principal do teste):
 
 Aqui na ALURA eu coloquei um wait de 1 minuto porque o site deles é muito lento.
 
-Exemplo de JSON para Amazon:
+Exemplo de JSON para Amazon (o caso da Amazon é um pouco mais complicado, pois realizam bloqueios recorrentes pra evitar extração, mas nas primeiras tentativas irá funcionar):
 
 {
   "url": "https://www.amazon.com.br",
@@ -114,6 +114,7 @@ Melhorias futuras:
 	- Melhorias no fluxo de funcionamento do WebExtractor, para que assim seja possível realizar logs e tratamentos mais adequados
  	- Gerenciamento de acessos (tanto na parte de acesso ao sistema de extração, quanto na parte de logins de acesso caso o site que deve ser lido, tenha login)
   	- Controle de paginações de resultados
+   - Flexibilidade de uso de seletores (atualmente está apenas com xpath)
    	- ... Essas foram as que pensei no momento...
  
 Qualquer dúvida estou a disposição.
