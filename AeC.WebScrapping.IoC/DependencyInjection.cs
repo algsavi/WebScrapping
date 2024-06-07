@@ -1,11 +1,13 @@
 ﻿using AeC.WebScrapping.Application.Services;
 using AeC.WebScrapping.Domain.Interfaces;
+using AeC.WebScrapping.Infra.Context;
+using AeC.WebScrapping.Infra.Repositories;
 using AeC.WebScrapping.Infra.WebExtractor;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Interactions;
 
 namespace AeC.WebScrapping.IoC;
 
@@ -15,10 +17,17 @@ public static class DependencyInjection
     {
         services.AddScoped<IWebExtractor, WebExtractor>();
         services.AddScoped<IScrappingService, ScrappingService>();
+        services.AddScoped<IExtractorRepository, ExtractorRepository>();
+
+        var sqlConnectionString = configuration.GetConnectionString("sqlConnectionString");
+
+        services.AddDbContext<WebScrapperDbContext>(options =>
+            options.UseSqlServer(sqlConnectionString)
+        );
 
         services.AddSingleton<IWebDriver>(provider =>
         {
-            var userAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36";
+            var userAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36";
 
             var chromeOptions = new ChromeOptions();
             //chromeOptions.AddArgument("--headless");

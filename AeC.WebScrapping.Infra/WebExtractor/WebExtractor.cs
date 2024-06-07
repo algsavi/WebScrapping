@@ -5,6 +5,7 @@ using Newtonsoft.Json.Linq;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
+using System;
 using System.Dynamic;
 using System.Net.Http.Json;
 using System.Reflection.Metadata;
@@ -19,7 +20,7 @@ public class WebExtractor : IWebExtractor
         _webDriver = webDriver;
     }
 
-    public async Task<List<dynamic>> ScrapeAsync(string json)
+    public async Task<Scrapping> ScrapeAsync(string json)
     {
         List<dynamic> extractedItems = new List<dynamic>();
 
@@ -64,12 +65,12 @@ public class WebExtractor : IWebExtractor
                                 
                                 foreach (var property in properties)
                                 {
-                                    var subElement = element.FindElement(By.XPath(property.Value.ToString()));
+                                    var propertyElement = element.FindElement(By.XPath(property.Value.ToString()));
 
                                     if (property.Key == "url")
-                                        ((IDictionary<string, object>)extractedItem).Add(property.Key, subElement.GetAttribute("href"));
+                                        ((IDictionary<string, object>)extractedItem).Add(property.Key, propertyElement.GetAttribute("href"));
                                     else
-                                        ((IDictionary<string, object>)extractedItem).Add(property.Key, subElement.Text);
+                                        ((IDictionary<string, object>)extractedItem).Add(property.Key, propertyElement.Text);
 
                                     extractedItems.Add(extractedItem);
                                 }
@@ -127,6 +128,15 @@ public class WebExtractor : IWebExtractor
                     continue;
                 }
             }
+
+            var returnedJson = JsonConvert.SerializeObject(extractedItems, Formatting.Indented);
+
+            var scrappingData = new Scrapping();
+
+            scrappingData.Url = url;
+            scrappingData.Properties = returnedJson;
+
+            return scrappingData;
         }
         catch (JsonReaderException)
         {
@@ -140,7 +150,5 @@ public class WebExtractor : IWebExtractor
         {
             throw ex;
         }
-
-        return extractedItems;
     }
 }
