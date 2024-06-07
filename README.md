@@ -104,4 +104,9 @@ O inglês foi usado como linguagem padrão pois se trata de um projeto com possi
 O resultado é armazenado no banco de dados em formato JSON, como foi criado um projeto dinâmico, foi a melhor decisão de arquitetura,
 pois assim temos flexibilidade na hora de obter os dados. Para visualizar em HTML ou relatório PDF (ou para futuras exportações) fica bem fácil e flexivel também.
 
+O projeto foi criado de uma forma que possa ser separado os serviços para que assim possa ser realizado builds independentes, a arquitetura usada foi a Clean Architecture.
+
+Melhorias futuras:
+	- Para escalar um produto assim, precisaria adicionar um serviço assincrone do WebExtractor, deixando ele rodar em plano de fundo. Poderia usar tanto o Quartz quanto um serviço de messageria como o RabbitMQ (pensando em escala, seria a melhor opção).
+
 Qualquer dúvida estou a disposição.
