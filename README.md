@@ -6,7 +6,7 @@ update-database
 
 No projeto AeC.WebScrapping.IoC, caso deseje que o chrome não seja aberto, remover o comentário da linha 33 do arquivo "DependencyInjection.cs"
 
-Para testar o projeto, pode criar o JSON conforme desejar (não consegui testar inumeros sites, mas criei da forma mais dinâmica possível, dentro do tempo que tive para realizar o teste, que foi de 2 dias)
+Para testar o projeto, pode criar o JSON conforme desejar (não consegui testar inumeros sites, mas criei da forma mais dinâmica possível, dentro do tempo que tive para realizar o teste, que foi de 2 dias coniliando com meu trabalho atual)
 
 Exemplo de JSON da Alura (foco principal do teste):
 
