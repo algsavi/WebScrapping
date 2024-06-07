@@ -2,5 +2,5 @@
 
 public interface IWebExtractor
 {
-    Task<List<dynamic>> ScrapeAsync(string json);
+    Task<Scrapping> ScrapeAsync(string json);
 }
