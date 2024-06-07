@@ -108,5 +108,7 @@ O projeto foi criado de uma forma que possa ser separado os serviços para que a
 
 Melhorias futuras:
 	- Para escalar um produto assim, precisaria adicionar um serviço assincrone do WebExtractor, deixando ele rodar em plano de fundo. Poderia usar tanto o Quartz quanto um serviço de messageria como o RabbitMQ (pensando em escala, seria a melhor opção).
-
+	- Melhorias na usabilidade da interface web, com retornos de erro
+	- Melhorias no fluxo de funcionamento do WebExtractor, para que assim seja possível realizar logs e tratamentos mais adequados
+ 
 Qualquer dúvida estou a disposição.
