@@ -22,6 +22,8 @@ public class ScrappingService : IScrappingService
         {
             var scrappedData = await _webExtractor.ScrapeAsync(json);
 
+            //simulacao nova feature
+
             _extractorRepository.InsertData(scrappedData);
 
             return scrappedData;
