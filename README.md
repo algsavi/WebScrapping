@@ -109,7 +109,7 @@ Tentei simular o GitFlow, mesmo sendo mais complicado por estar começando tudo 
 O projeto foi criado de uma forma que possa ser separado os serviços para que assim possa ser realizado builds independentes, a arquitetura usada foi a Clean Architecture.
 
 Melhorias futuras:
-	- Para escalar um produto assim, precisaria adicionar um serviço assincrone do WebExtractor, deixando ele rodar em plano de fundo. Poderia usar tanto o Quartz quanto um serviço de messageria como o RabbitMQ (pensando em escala, seria a melhor opção).
+	- Para escalar um produto assim, precisaria adicionar um serviço assincrone do WebExtractor, deixando ele rodar em plano de fundo. Poderia usar tanto o Quartz quanto um serviço de messageria como o RabbitMQ (pensando em escala, seria a melhor opção). Outra opção para escalar, seria usar o Selenium Grid.
 	- Melhorias na usabilidade da interface web, com retornos de erro
 	- Melhorias no fluxo de funcionamento do WebExtractor, para que assim seja possível realizar logs e tratamentos mais adequados
  	- Gerenciamento de acessos (tanto na parte de acesso ao sistema de extração, quanto na parte de logins de acesso caso o site que deve ser lido, tenha login)
