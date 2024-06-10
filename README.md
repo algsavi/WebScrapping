@@ -42,7 +42,7 @@ Exemplo de JSON da Alura (foco principal do teste):
 
 Aqui na ALURA eu coloquei um wait de 1 minuto porque o site deles é muito lento.
 
-Exemplo de JSON para Amazon (o caso da Amazon é um pouco mais complicado, pois realizam bloqueios recorrentes pra evitar extração, mas nas primeiras tentativas irá funcionar):
+Exemplo de JSON para Amazon (o caso da Amazon é um pouco mais complicado, pois realizam bloqueios recorrentes pra evitar extração, mas nas primeiras tentativas irá funcionar), importante também para o correto funcionamento da AMAZON, colocar o useragent certinho, o user agent pode ser alterado no appsettings.json do projeto WEB, para identificar o user agent facilmente, pode-se utilizar o seguinte link: https://www.whatismybrowser.com/detect/what-is-my-user-agent/
 
 {
   "url": "https://www.amazon.com.br",
