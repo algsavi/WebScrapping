@@ -8,11 +8,13 @@ public class Scrapping
 
     public Scrapping(string url, string properties)
     {
-        if (IsValidScrapping(url, properties))
+        if (!IsValidScrapping(url, properties))
         {
-            Url = url;
-            Properties = properties;
+            throw new ArgumentException("Invalid data to create a new web scrapping!")
         }
+
+        Url = url;
+        Properties = properties;
     }
 
     private bool IsValidScrapping(string url, string properties)
