@@ -2,7 +2,7 @@
 A connection string está no "appsettings.json" do projeto Web
 
 Para rodar a migration usar como default o projeto Infra:
-update-database
+`update-database`
 
 No projeto AeC.WebScrapping.IoC, caso deseje que o chrome não seja aberto, remover o comentário da linha 33 do arquivo "DependencyInjection.cs"
 
