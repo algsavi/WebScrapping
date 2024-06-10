@@ -131,10 +131,7 @@ public class WebExtractor : IWebExtractor
 
             var returnedJson = JsonConvert.SerializeObject(extractedItems, Formatting.Indented);
 
-            var scrappingData = new Scrapping();
-
-            scrappingData.Url = url;
-            scrappingData.Properties = returnedJson;
+            var scrappingData = new Scrapping(url, returnedJson);
 
             return scrappingData;
         }

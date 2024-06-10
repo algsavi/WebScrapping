@@ -24,6 +24,7 @@ public class ScrappingService : IScrappingService
 
             //simulacao nova feature
 
+            //simulação de bug (branch hotfix)
             _extractorRepository.InsertData(scrappedData);
 
             return scrappedData;
