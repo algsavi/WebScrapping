@@ -27,7 +27,7 @@ public static class DependencyInjection
 
         services.AddSingleton<IWebDriver>(provider =>
         {
-            var userAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36";
+            var userAgent = configuration.GetSection("UserAgent");
 
             var chromeOptions = new ChromeOptions();
             //chromeOptions.AddArgument("--headless");
